@@ -57,7 +57,13 @@ function AuthForm() {
       <div className="px-4 py-8 bg-white shadow sm:rounded-lg sm:px-10">
         <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
           {variant === "REGISTER" && (
-            <Input id="name" label="Name" register={register} errors={errors} />
+            <Input
+              id="name"
+              label="Name"
+              register={register}
+              errors={errors}
+              disabled={isLoading}
+            />
           )}
 
           <Input
@@ -65,12 +71,14 @@ function AuthForm() {
             label="Email Address"
             type="email"
             register={register}
+            disabled={isLoading}
             errors={errors}
           />
           <Input
             id="password"
             label="Password"
             type="password"
+            disabled={isLoading}
             register={register}
             errors={errors}
           />
@@ -97,7 +105,7 @@ function AuthForm() {
         {/* HandleSubmit wraps onSubmit function because we need to pass default values in onSubmit function which we can only get from handleSubmit function of react hook form */}
 
         <div className="flex justify-center gap-2 px-2 mt-6 text-sm text-gray-500">
-          {variant === "LOGIN" ? "New to Messenger?" : "Already have an account?"}
+          {variant === "LOGIN" ? "New to Msg Bot?" : "Already have an account?"}
           <div onClick={toggleVariant} className="underline cursor-pointer">
             {variant === "LOGIN" ? "Create an account" : "Login"}
           </div>

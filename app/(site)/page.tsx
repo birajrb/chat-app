@@ -8,9 +8,9 @@ export default function Home() {
         <Image
           alt="logo"
           height={32}
-          width={32}
+          width={50}
           className="w-auto mx-auto"
-          src="/images/logo.png"
+          src="/images/msg-logo.png"
         />
         <h2 className="mt-3 text-2xl font-semibold tracking-tight text-center text-gray-900">
           Sign in to your account
